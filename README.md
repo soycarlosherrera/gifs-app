@@ -57,3 +57,22 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## 🔐 Environment Configuration
+
+This project requires environment-specific configuration files located in `src/environments/`.
+
+To get started:
+
+1. Copy the example file:
+   ```bash
+   cp src/environments/environment.example.ts src/environments/environment.ts
+
+cp src/environments/environment.development.example.ts src/environments/environment.development.ts
+
+
+2. Replace the placeholder values (e.g., YOUR_API_KEY_HERE) with your actual configuration values.
+
+⚠️ Do not commit your real API keys or secrets. These files are excluded via .gitignore.
+
