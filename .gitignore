@@ -42,10 +42,7 @@ testem.log
 Thumbs.db
 
 # Environment and secrets
-environments/
+src/environments/*.ts
+!src/environments/*.example.ts
 .env
 .env.*
-
-!src/environments/environment.example.ts
-!src/environments/environment.development.example.ts
-
