@@ -32,4 +32,19 @@ export class GifService {
       console.log({gifs});
     });
    }
+
+   searchGifs(query: string){
+    return this.http.get<GiphyResponse>(`${environment.giphyUrl}/gifs/search`,{
+      params: {
+        api_key: environment.giphyApiKey,
+        limit: 20,
+        q: query,
+      },
+    });
+    // .subscribe((resp)=>{
+    //   const gifs = GifMapper.mapGiphyItemsToGiArray(resp.data);
+    //   console.log({gifs});
+    // });
+
+   }
 }
