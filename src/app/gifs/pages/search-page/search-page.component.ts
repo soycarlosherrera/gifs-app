@@ -18,8 +18,11 @@ export default class SearchPageComponent {
   onSearch( query:string){
     //console.log({query});
     this.gifService.searchGifs(query).subscribe((resp)=>{
-      console.log(resp);
+      //console.log(resp);
+      this.gifs.set(resp);
     });
   }
 
 }
+
+

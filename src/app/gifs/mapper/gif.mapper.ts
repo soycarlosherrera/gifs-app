@@ -13,7 +13,7 @@ export class GifMapper {
     };
   }
 
-  static mapGiphyItemsToGiArray(items: GiphyItem[]): Gif[]{
+  static mapGiphyItemsToGifArray(items: GiphyItem[]): Gif[]{
     return items.map(this.mapGiphyItemToGif);
   }
 
