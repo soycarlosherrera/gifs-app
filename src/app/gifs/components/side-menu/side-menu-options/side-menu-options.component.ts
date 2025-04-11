@@ -19,6 +19,9 @@ interface MenuOption{
   templateUrl: './side-menu-options.component.html',
 })
 export class SideMenuOptionsComponent {
+
+  gifService = inject(GifService);
+
   menuOption: MenuOption[] = [
     {
       icon: 'fa-solid fa-chart-line',
@@ -33,5 +36,4 @@ export class SideMenuOptionsComponent {
       route: '/dashboard/search',
     },
   ];
-  gifService = inject(GifService);
 }
