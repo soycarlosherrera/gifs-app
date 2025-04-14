@@ -1,5 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
-import { GifListComponent } from "../../components/gif-list/gif-list.component";
+import { Component, ElementRef, inject, viewChild } from '@angular/core';
+//import { GifListComponent } from "../../components/gif-list/gif-list.component";
 import { GifService } from '../../services/gifs.service';
 
 // const imageUrls: string[] = [
@@ -19,11 +19,30 @@ import { GifService } from '../../services/gifs.service';
 
 @Component({
   selector: 'app-trending-page',
-  imports: [GifListComponent],
+  //imports: [GifListComponent],
   templateUrl: './trending-page.component.html',
 })
 export default class TrendingPageComponent {
   //gifs = signal(imageUrls);
   gifService = inject(GifService);
+
+  scrollDivRef = viewChild<ElementRef<HTMLDivElement>>('groupDiv');
+
+  onScroll(event: Event) {
+    const scrollDiv = this.scrollDivRef()?.nativeElement;
+    //console.log(scrollDiv);
+    if (!scrollDiv) return;
+
+    const scrollTop = scrollDiv.scrollTop;
+    const clientHeight = scrollDiv.clientHeight;
+    const scrollHeight = scrollDiv.scrollHeight;
+
+    // console.log({ scrollTotal: scrollTop + clientHeight, scrollHeight });
+    const isAtBottom = scrollTop + clientHeight + 300 >= scrollHeight;
+
+    console.log({isAtBottom});
+
+  }
+
  }
 
